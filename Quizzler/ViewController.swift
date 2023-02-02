@@ -38,12 +38,23 @@ class ViewController: UIViewController {
     //        Question(q: "What alcoholic drink is made from molasses?", a: ["Rum", "Whisky", "Gin"], correctAnswer: "Rum"),
     //        Question(q: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile"], correctAnswer: "Gorilla"),
     //        Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland"], correctAnswer: "Australia")
+    
+    //MARK: Properties
+    let quiz = [
+        ["True story", "True"],
+        ["False story", "True"],
+        ["Total b*llshit", "False"]
+    ]
+    
+    var questionNumber = 0
+    
+    
 
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questionLabel.text = "True story"
+        updateUI()
     }
     
     //MARK: Outlets
@@ -54,6 +65,28 @@ class ViewController: UIViewController {
     
     //MARK: Actions
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        let questionAnswer = sender.currentTitle //String: True or False
+        let userAnswer = quiz[questionNumber][1]
+        
+        if questionAnswer == userAnswer {
+            print("Right!")
+        } else {
+            print("Wrong!")
+        }
+        
+        if questionNumber + 1 < quiz.count {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+        }
+        
+        updateUI()
+    }
+    
+    //MARK: Methods
+    
+    func updateUI() {
+        questionLabel.text = quiz[questionNumber][0]
     }
     
 }
