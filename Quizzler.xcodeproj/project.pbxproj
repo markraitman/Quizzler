@@ -39,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A261A545298D0A9700F0ACC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A2784B7F298A805C000A05C0 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A261A546298D0AA500F0ACC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2784B81298A805C000A05C0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A261A547298D0AB300F0ACC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A261A543298CF6FA00F0ACC3 /* Question.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A2784B6F298A805C000A05C0 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +84,9 @@
 			children = (
 				A2784B7B298A805C000A05C0 /* AppDelegate.swift */,
 				A2784B7D298A805C000A05C0 /* SceneDelegate.swift */,
-				A2784B7F298A805C000A05C0 /* ViewController.swift */,
-				A261A543298CF6FA00F0ACC3 /* Question.swift */,
-				A2784B81298A805C000A05C0 /* Main.storyboard */,
+				A261A547298D0AB300F0ACC3 /* Model */,
+				A261A545298D0A9700F0ACC3 /* Controller */,
+				A261A546298D0AA500F0ACC3 /* View */,
 				A2784B84298A8061000A05C0 /* Assets.xcassets */,
 				A2784B86298A8061000A05C0 /* LaunchScreen.storyboard */,
 				A2784B89298A8061000A05C0 /* Info.plist */,
