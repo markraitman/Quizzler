@@ -41,9 +41,9 @@ class ViewController: UIViewController {
     
     //MARK: Properties
     let quiz = [
-        ["True story", "True"],
-        ["False story", "True"],
-        ["Total b*llshit", "False"]
+        Question(q: "True story", a: "True"),
+        Question(q: "False story", a: "True"),
+        Question(q: "Total b*llshit", a: "False")
     ]
     
     var questionNumber = 0
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     //MARK: Actions
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         let questionAnswer = sender.currentTitle //String: True or False
-        let userAnswer = quiz[questionNumber][1]
+        let userAnswer = quiz[questionNumber].answer
         
         if questionAnswer == userAnswer {
             print("Right!")
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
     //MARK: Methods
     
     func updateUI() {
-        questionLabel.text = quiz[questionNumber][0]
+        questionLabel.text = quiz[questionNumber].text
     }
     
 }
