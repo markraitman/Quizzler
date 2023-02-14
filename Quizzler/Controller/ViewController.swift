@@ -9,17 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties 
     var quizBrain = QuizBrain()
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateUI()
     }
     
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var choiceTwo: UIButton!
     @IBOutlet weak var choiceThree: UIButton!
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         let userAnswer = sender.currentTitle! //String: True or False
         let userGotItRight = quizBrain.checkAnswer(userAnswer)
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
-    //MARK: Methods
+    //MARK: - Methods
     @objc func updateUI() {
         questionLabel.text = quizBrain.getQuestionText()
         
